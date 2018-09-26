@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title> Photo Gallery </title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	
+	<body>
+		<div id="navigation">
+			<ul class="navigation">
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/todolist.html" target="_self"> To Do List </a> </li>
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/photogallery.html" target="_self"> Photo Gallery </a> </li>
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/aboutme.html" target="_self"> About Me </a> </li>
+			</ul>
+		</div>
+		<h1 id="header"> In Need of Inspiration? </h1>
+
+		<table>
+			<tr>
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0114.jpg" onclick="openModal();currentSlide(1)" >
+				<td class="column"> <img src="https://www.publicdomainpictures.net/pictures/20000/velka/background-with-flower-and-butterfl-1326054113zvO.jpg" onclick="openModal();currentSlide(2)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0135.jpg" onclick="openModal();currentSlide(3)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0136.jpg" onclick="openModal();currentSlide(4)" >
+			</tr>
+			<tr>
+				<td class="column"> <img src="https://www.publicdomainpictures.net/pictures/40000/velka/summer-day-1362416318qCN.jpg" onclick="openModal();currentSlide(5)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0152.jpg" onclick="openModal();currentSlide(6)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0075.jpg" onclick="openModal();currentSlide(7)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0164.jpg" onclick="openModal();currentSlide(8)" >
+			</tr>
+			<tr>
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0127.jpg" onclick="openModal();currentSlide(9)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0182.jpg" onclick="openModal();currentSlide(10)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0184.jpg" onclick="openModal();currentSlide(11)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0199.jpg" onclick="openModal();currentSlide(12)" >
+			</tr>
+			<tr>
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0217.jpg" onclick="openModal();currentSlide(13)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0223.jpg" onclick="openModal();currentSlide(14)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0233.jpg" onclick="openModal();currentSlide(15)" >
+				<td class="column"> <img src="https://www.publicdomainpictures.net/pictures/30000/velka/autumn-beach.jpg" onclick="openModal();currentSlide(16)" >
+			</tr>
+			<tr>
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0035.jpg" onclick="openModal();currentSlide(17)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0050.jpg" onclick="openModal();currentSlide(18)" >
+				<td class="column"> <img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0063.jpg" onclick="openModal();currentSlide(19)" >
+				<td class="column"> <img src="https://www.publicdomainpictures.net/pictures/40000/velka/waterfall-136532621398D.jpg" onclick="openModal();currentSlide(20)" >
+			</tr>
+		</table>
+		
+		<!-- Lightbox -->
+		<div id="myModal" class="modal">
+		
+			<!-- Close Button -->
+			<span class="close" onclick="closeModal()">&times;</span>
+			
+			<!-- Modal -->
+			<div class="modal-content">
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0114.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.publicdomainpictures.net/pictures/20000/velka/background-with-flower-and-butterfl-1326054113zvO.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0135.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0136.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.publicdomainpictures.net/pictures/40000/velka/summer-day-1362416318qCN.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0152.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0075.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0164.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0127.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0182.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0184.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0199.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0217.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0223.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0233.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.publicdomainpictures.net/pictures/30000/velka/autumn-beach.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0035.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0050.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0063.jpg" style="width:100%">
+				</div>
+				<div class="mySlides">
+					<img src="https://www.publicdomainpictures.net/pictures/40000/velka/waterfall-136532621398D.jpg" style="width:100%">
+				</div>
+				
+				<!-- Previous and Next Buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	
+				<!-- Thumbnails -->
+				<div id="thumbnails">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0114.jpg" onclick="currentSlide(1)" alt="Lake">
+					<img class="thumbnail" src="https://www.publicdomainpictures.net/pictures/20000/velka/background-with-flower-and-butterfl-1326054113zvO.jpg" onclick="currentSlide(2)" alt="Butterfly">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0135.jpg" onclick="currentSlide(3)" alt="Flowers">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0136.jpg" onclick="currentSlide(4)" alt="Dreamcatcher">
+					<img class="thumbnail" src="https://www.publicdomainpictures.net/pictures/40000/velka/summer-day-1362416318qCN.jpg" onclick="currentSlide(5)" alt="Tree">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0152.jpg" onclick="currentSlide(6)" alt="Dock">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0075.jpg" onclick="currentSlide(7)" alt="Leaves">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0164.jpg" onclick="currentSlide(8)" alt="Tree Tunnel">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0127.jpg" onclick="currentSlide(9)" alt="Boat">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0182.jpg" onclick="currentSlide(10)" alt="Creek">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0184.jpg" onclick="currentSlide(11)" alt="Waterfall">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0199.jpg" onclick="currentSlide(12)" alt="Lake">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0217.jpg" onclick="currentSlide(13)" alt="Swing">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0223.jpg" onclick="currentSlide(14)" alt="Stump">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0233.jpg" onclick="currentSlide(15)" alt="Flowers">
+					<img class="thumbnail" src="https://www.publicdomainpictures.net/pictures/30000/velka/autumn-beach.jpg" onclick="currentSlide(16)" alt="Lake">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0035.jpg" onclick="currentSlide(17)" alt="Railroad Tracks">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0050.jpg" onclick="currentSlide(18)" alt="Road">
+					<img class="thumbnail" src="https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/02/public-domain-images-free-high-resolution-quality-photos-unsplash-0063.jpg" onclick="currentSlide(19)" alt="Beach">
+					<img class="thumbnail" src="https://www.publicdomainpictures.net/pictures/40000/velka/waterfall-136532621398D.jpg" onclick="currentSlide(20)" alt="Waterfall">
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			// Open the Modal
+			function openModal() {
+				document.getElementById("myModal").style.display = "block";
+			}
+
+			// Close the Modal
+			function closeModal() {
+				document.getElementById("myModal").style.display = "none";
+			}
+
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Previous or Next Controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			// Thumbnail Controls
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			// Show the image
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var thumbnails = document.getElementsByClassName("thumbnail");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < thumbnails.length; i++) {
+					thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				thumbnails[slideIndex-1].className += " active";
+			}
+		</script>
+	</body>
+	
+</html>
