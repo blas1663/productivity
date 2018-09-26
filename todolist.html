@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title> To Do List </title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	
+	<body>
+		<div id="navigation">
+			<ul class="navigation">
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/todolist.html" target="_self"> To Do List </a> </li>
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/photogallery.html" target="_self"> Photo Gallery </a> </li>
+				<li class="navigation"> <a class="navigation" href="file:///C:/Users/megan_000/OneDrive%20-%20University%20of%20St.%20Thomas/CISC%20375/productivity_web_site/aboutme.html" target="_self"> About Me </a> </li>
+			</ul>
+		</div>
+		<h1 id="header"> To Do List </h1>
+		
+		<div id="input">
+			<p> Task: <input type="text" id="task" placeholder="Description of the Task"/> <br/> </p>
+			<p> Date: <input type="date" id="date"/> <br/> </p>
+			<p> Time: <input type="time" id="time"/> <br/> </p>
+			<p> Category:
+				<select id="category">
+					<option id="1" value="Homework"> Homework </option>
+					<option id="2" value="Work"> Work </option>
+					<option id="3" value="Health"> Health </option>
+					<option id="4" value="Chores"> Chores </option>
+				</select>
+			</p>
+			<button type="button" onclick="fillTable()"/> OK <br/>
+		</div>
+		
+		<div id="category">
+			<p> Add a new category here: </p>
+			<p> Title: <input type="text" id="newCategory"/> <br/> </p>
+			<p> Color: <input type="color" id="color"/> <br/> </p>
+			<button type="button" onclick="addCategory()"/> OK <br/>
+		</div>
+		
+		<p id="sort"> Click on the headers of Date, Time, Category or Date Added to sort </p>
+				
+		<div>
+			<table id="table">
+				<tr>
+					<th> Task </th>
+					<th class="cursor" onclick="sortDates(1)"> Date </th>
+					<th class="cursor" onclick="sortTable(2)"> Time </th>
+					<th class="cursor" onclick="sortTable(3)"> Category </th>
+					<th class="cursor" onclick="sortDates(4)"> Date Added </th>
+					<th> Complete </th>
+				</tr>
+			</table>
+		</div>
+		
+		<script type="text/javascript">
+			//set categories and colors
+			var categories = [
+				[document.getElementById("1").value, "#19c60f"],
+				[document.getElementById("2").value, "#c60f3f"],
+				[document.getElementById("3").value, "#c64f0f"],
+				[document.getElementById("4").value, "#0f6dc6"]
+			];
+					
+			//number of rows
+			var number = 0;	
+			
+			function fillTable() {
+				number = number + 1;
+				var table = document.getElementById("table");
+				var newRow = document.createElement("tr");
+				var col1 = document.createElement("td");
+				col1.innerHTML = document.getElementById("task").value;
+				newRow.appendChild(col1);
+				var col2 = document.createElement("td");
+				var date = new Date(document.getElementById("date").value);
+				var month = date.getMonth() + 1;
+				var day = date.getDate() + 1;
+				var year = date.getFullYear();
+				date = month + "/" + day + "/" + year;
+				col2.innerHTML = date;
+				newRow.appendChild(col2);
+				col2.classList.add('dateData');
+				var col3 = document.createElement("td");
+				col3.innerHTML = document.getElementById("time").value;
+				newRow.appendChild(col3);
+				var col4 = document.createElement("td");
+				col4.innerHTML = document.getElementById("category").value;
+				newRow.appendChild(col4);
+				var col5 = document.createElement("td");
+				date = new Date();
+				month = date.getMonth() + 1;
+				day = date.getDate();
+				year = date.getFullYear();
+				date = month + "/" + day + "/" + year;
+				col5.innerHTML = date;
+				newRow.appendChild(col5);
+				var col6 = document.createElement("INPUT");
+				col6.type = "checkbox";
+				newRow.appendChild(col6);
+				var col7 = document.createElement("button");
+				col7.innerHTML = "remove";
+				col7.addEventListener("click", function() {
+					var ok = confirm("Are you sure you want to remove this task?");
+					if (ok == true) {
+						document.getElementById("table").deleteRow(-1);
+					}
+				});
+				newRow.appendChild(col7);
+				
+				//finds row of category, sets background color to associated color
+				var index;
+				for (var i = 0; i < categories.length; i++) {
+					if (document.getElementById("category").value == categories[i][0]) {
+						index = i;
+					}
+				}
+				newRow.style.backgroundColor = categories[index][1];
+				
+				table.appendChild(newRow);
+			}
+			
+			function addCategory() {
+				var selector = document.getElementById("category");
+				var option = document.createElement("option");
+				var title = document.getElementById("newCategory");
+				var color = document.getElementById("color");
+				option.text = title.value;
+				var array = [title.value, color.value];
+				categories.push(array);
+				selector.add(option);
+			}
+			
+			function sortTable(n) {
+				var table, rows, switching, i, check1, check2, shouldSwitch;
+				table = document.getElementById("table");
+				switching = true;
+				//will continue until all switching is done 
+				while (switching) {
+					//start with no switching so that we stay in the loop
+					switching = false;
+					rows = table.rows;
+					//go through all of the rows except for the header
+					for (i = 1; i < number; i++) {
+						//not switched is the default so we only have to check if they need to switch
+						shouldSwitch = false;
+						check1 = rows[i].getElementsByTagName("td")[n];
+						check2 = rows[i + 1].getElementsByTagName("td")[n];
+						if (check1.innerHTML.toLowerCase() > check2.innerHTML.toLowerCase()) {
+							//mark the switch and break the loop
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if (shouldSwitch) {
+						//make the switch and break the loop
+						rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+						switching = true;
+					}
+				}
+			}
+			
+			function sortDates(n) {
+				var table, rows, switching, i, check1, check2, shouldSwitch;
+				table = document.getElementById("table");
+				switching = true;
+				//will continue until all switching is done 
+				while (switching) {
+					//start with no switching so that we stay in the loop
+					switching = false;
+					rows = table.rows;
+					//go through all of the rows except for the header
+					for (i = 1; i < number; i++) {
+						//not switched is the default so we only have to check if they need to switch
+						shouldSwitch = false;
+						check1 = rows[i].getElementsByTagName("td")[n];
+						check2 = rows[i + 1].getElementsByTagName("td")[n];
+						if (new Date(check1.innerHTML) > new Date(check2.innerHTML)) {
+							//mark the switch and break the loop
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if (shouldSwitch) {
+						//make the switch and break the loop
+						rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+						switching = true;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
